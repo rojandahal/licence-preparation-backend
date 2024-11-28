@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
+import { Controller, Module } from '@nestjs/common';
+import { ControllerModule } from './controllers/controller.module';
+import { NestModule } from './server/nest.module';
 
 @Module({
-  imports: [],
+  imports: [ControllerModule, NestModule],
   controllers: [],
   providers: [],
-  exports: [],
+  exports: [ControllerModule, NestModule],
 })
 export class InfraModule {}
